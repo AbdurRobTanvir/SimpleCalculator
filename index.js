@@ -1,21 +1,70 @@
+// function getValue(id) {
+//     var input = document.getElementById(id).value;
+//     input = parseFloat(input);
+//     return input;
+// }
 
+// function plusFunction() {
+//     var input1 = getValue("id1");
+//     var input2 = getValue("id2");
+//     var total = input1 + input2;
 
-const buttonPlus = document.getElementById("plus-sign");
-buttonPlus.addEventListener("click", () => {
-    var input1 = document.getElementById("id1").value;
-    input1 = +input1;
-    var input2 = document.getElementById("id2").value;
-    input2 = +input2;
-    var sum = input1 + input2;
-    document.getElementById("result").innerHTML = sum;
-})
+//     document.getElementById("result").innerHTML = total;
+// }
 
-const buttonMinus = document.getElementById("minus-sign");
-buttonMinus.addEventListener("click", () => {
-    var input1 = document.getElementById("id1").value;
-    input1 = +input1;
-    var input2 = document.getElementById("id2").value;
-    input2 = +input2;
-    var total = input1 - input2;
+// function minusFunction() {
+//     var input1 = getValue("id1");
+//     var input2 = getValue("id2");
+//     var total = input1 - input2;
+
+//     document.getElementById("result").innerHTML = total;
+// }
+
+// function multiplyFunction() {
+//     var input1 = getValue("id1");
+//     var input2 = getValue("id2");
+//     var total = input1 * input2;
+
+//     document.getElementById("result").innerHTML = total;
+// }
+
+// function divideFunction() {
+//     var input1 = getValue("id1");
+//     var input2 = getValue("id2");
+//     var total = input1 / input2;
+
+//     document.getElementById("result").innerHTML = total;
+// }
+function getValue(id) {
+    var input = document.getElementById(id).value;
+    input = parseFloat(input);
+    return input;
+}
+function calFunction(sign) {
+    var input1 = getValue("id1");
+    var input2 = getValue("id2");
+    
+    if (sign === '+') {
+        var total = input1 + input2;
+    }
+
+    else if (sign === '-') {
+        var total = input1 - input2;
+    }
+
+    else if (sign === '*') {
+        var total = input1 * input2;
+    }
+
+    else if (sign === '/') {
+        var total = input1 / input2;
+    }
+
     document.getElementById("result").innerHTML = total;
-})
+}
+
+function resetAll() {
+    document.getElementById("id1").value = "";
+    document.getElementById("id2").value = "";
+    document.getElementById("result").innerHTML = "";
+}
